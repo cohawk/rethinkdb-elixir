@@ -76,9 +76,12 @@ defmodule MathLogicTest do
 
   test "find remainder when dividing two numbers" do
 <<<<<<< HEAD
+<<<<<<< HEAD
     {:ok, %Record{data: data}} = mod(23, 4) |> run
     assert data == 3
 =======
+=======
+>>>>>>> parent of 29e485b... Switch to :ok/:error tuple response
     %Record{data: data} = mod(23, 4) |> run
     assert data == 3 
 >>>>>>> parent of 29e485b... Switch to :ok/:error tuple response
@@ -91,9 +94,12 @@ defmodule MathLogicTest do
 
   test "logical and of list" do
 <<<<<<< HEAD
+<<<<<<< HEAD
     {:ok, %Record{data: data}} = and_r([true, true, false]) |> run
     assert data == false
 =======
+=======
+>>>>>>> parent of 29e485b... Switch to :ok/:error tuple response
     %Record{data: data} = and_r([true, true, false]) |> run
     assert data == false 
 >>>>>>> parent of 29e485b... Switch to :ok/:error tuple response
@@ -105,6 +111,7 @@ defmodule MathLogicTest do
   end
 
   test "logical or of list" do
+<<<<<<< HEAD
 <<<<<<< HEAD
     {:ok, %Record{data: data}} = or_r([false, false, false]) |> run
     assert data == false
@@ -166,10 +173,42 @@ defmodule MathLogicTest do
     assert data == false 
     %Record{data: data} = ne([1, 2, 1]) |> run
 >>>>>>> parent of 29e485b... Switch to :ok/:error tuple response
+=======
+    %Record{data: data} = or_r([false, false, false]) |> run
+    assert data == false 
+  end
+
+  test "two numbers are equal" do
+    %Record{data: data} = eq(1, 1) |> run
+    assert data == true 
+    %Record{data: data} = eq(2, 1) |> run
+    assert data == false 
+  end
+    
+  test "values in a list are equal" do
+    %Record{data: data} = eq([1, 1, 1]) |> run
+    assert data == true 
+    %Record{data: data} = eq([1, 2, 1]) |> run
+    assert data == false 
+  end
+    
+  test "two numbers are not equal" do
+    %Record{data: data} = ne(1, 1) |> run
+    assert data == false 
+    %Record{data: data} = ne(2, 1) |> run
+    assert data == true 
+  end
+    
+  test "values in a list are not equal" do
+    %Record{data: data} = ne([1, 1, 1]) |> run
+    assert data == false 
+    %Record{data: data} = ne([1, 2, 1]) |> run
+>>>>>>> parent of 29e485b... Switch to :ok/:error tuple response
     assert data == true
   end
     
   test "a number is less than the other" do
+<<<<<<< HEAD
 <<<<<<< HEAD
     {:ok, %Record{data: data}} = lt(2, 1) |> run
     assert data == false
@@ -193,10 +232,23 @@ defmodule MathLogicTest do
     assert data == false 
     %Record{data: data} = lt([1, 4, 5]) |> run
 >>>>>>> parent of 29e485b... Switch to :ok/:error tuple response
+=======
+    %Record{data: data} = lt(2, 1) |> run
+    assert data == false 
+    %Record{data: data} = lt(1, 2) |> run
+    assert data == true 
+  end
+    
+  test "values in a list less than the next" do
+    %Record{data: data} = lt([1, 4, 2]) |> run
+    assert data == false 
+    %Record{data: data} = lt([1, 4, 5]) |> run
+>>>>>>> parent of 29e485b... Switch to :ok/:error tuple response
     assert data == true
   end
     
   test "a number is less than or equal to the other" do
+<<<<<<< HEAD
 <<<<<<< HEAD
     {:ok, %Record{data: data}} = le(1, 1) |> run
     assert data == true
@@ -220,10 +272,23 @@ defmodule MathLogicTest do
     assert data == false 
     %Record{data: data} = le([1, 4, 4]) |> run
 >>>>>>> parent of 29e485b... Switch to :ok/:error tuple response
+=======
+    %Record{data: data} = le(1, 1) |> run
+    assert data == true 
+    %Record{data: data} = le(1, 2) |> run
+    assert data == true 
+  end
+    
+  test "values in a list less than or equal to the next" do
+    %Record{data: data} = le([1, 4, 2]) |> run
+    assert data == false 
+    %Record{data: data} = le([1, 4, 4]) |> run
+>>>>>>> parent of 29e485b... Switch to :ok/:error tuple response
     assert data == true
   end
     
   test "a number is greater than the other" do
+<<<<<<< HEAD
 <<<<<<< HEAD
     {:ok, %Record{data: data}} = gt(1, 1) |> run
     assert data == false
@@ -247,10 +312,23 @@ defmodule MathLogicTest do
     assert data == false 
     %Record{data: data} = gt([10, 4, 2]) |> run
 >>>>>>> parent of 29e485b... Switch to :ok/:error tuple response
+=======
+    %Record{data: data} = gt(1, 1) |> run
+    assert data == false 
+    %Record{data: data} = gt(2, 1) |> run
+    assert data == true 
+  end
+    
+  test "values in a list greater than the next" do
+    %Record{data: data} = gt([1, 4, 2]) |> run
+    assert data == false 
+    %Record{data: data} = gt([10, 4, 2]) |> run
+>>>>>>> parent of 29e485b... Switch to :ok/:error tuple response
     assert data == true
   end
     
   test "a number is greater than or equal to the other" do
+<<<<<<< HEAD
 <<<<<<< HEAD
     {:ok, %Record{data: data}} = ge(1, 1) |> run
     assert data == true
@@ -274,6 +352,18 @@ defmodule MathLogicTest do
     assert data == false 
     %Record{data: data} = ge([10, 4, 4]) |> run
 >>>>>>> parent of 29e485b... Switch to :ok/:error tuple response
+=======
+    %Record{data: data} = ge(1, 1) |> run
+    assert data == true 
+    %Record{data: data} = ge(2, 1) |> run
+    assert data == true 
+  end
+    
+  test "values in a list greater than or equal to the next" do
+    %Record{data: data} = ge([1, 4, 2]) |> run
+    assert data == false 
+    %Record{data: data} = ge([10, 4, 4]) |> run
+>>>>>>> parent of 29e485b... Switch to :ok/:error tuple response
     assert data == true
   end
 
@@ -284,7 +374,11 @@ defmodule MathLogicTest do
 
   test "random operator" do
 <<<<<<< HEAD
+<<<<<<< HEAD
     {:ok, %Record{data: data}} = random() |> run
+=======
+    %Record{data: data} = random |> run
+>>>>>>> parent of 29e485b... Switch to :ok/:error tuple response
 =======
     %Record{data: data} = random |> run
 >>>>>>> parent of 29e485b... Switch to :ok/:error tuple response
@@ -315,9 +409,15 @@ defmodule MathLogicTest do
 
   test "floor" do
 <<<<<<< HEAD
+<<<<<<< HEAD
     {:ok, %Record{data: data}} = floor(0.3) |> run
     assert data == 0
     {:ok, %Record{data: data}} = floor(0.6) |> run
+=======
+    %Record{data: data} = floor(0.3) |> run
+    assert data == 0 
+    %Record{data: data} = floor(0.6) |> run
+>>>>>>> parent of 29e485b... Switch to :ok/:error tuple response
 =======
     %Record{data: data} = floor(0.3) |> run
     assert data == 0 

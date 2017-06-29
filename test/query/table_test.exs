@@ -20,8 +20,13 @@ defmodule TableTest do
     %Record{data: %{"tables_created" => 1}} = run q
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     q = table_list()
     {:ok, %Record{data: tables}} = run q
+=======
+    q = table_list
+    %Record{data: tables} = run q
+>>>>>>> parent of 29e485b... Switch to :ok/:error tuple response
 =======
     q = table_list
     %Record{data: tables} = run q
@@ -32,8 +37,13 @@ defmodule TableTest do
     %Record{data: %{"tables_dropped" => 1}} = run q
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     q = table_list()
     {:ok, %Record{data: tables}} = run q
+=======
+    q = table_list
+    %Record{data: tables} = run q
+>>>>>>> parent of 29e485b... Switch to :ok/:error tuple response
 =======
     q = table_list
     %Record{data: tables} = run q

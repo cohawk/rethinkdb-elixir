@@ -44,10 +44,13 @@ defmodule WritingDataTest do
     table_query = table(@table_name)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     q = insert(table_query, [%{name: "Hello", value: 1}])
     {:ok, %Record{data: %{"generated_keys"=> [id], "inserted" => 1}}} = run(q)
 
 =======
+=======
+>>>>>>> parent of 29e485b... Switch to :ok/:error tuple response
     q = insert(table_query, [%{name: "Hello", value: 1}])   
     %Record{data: %{"generated_keys"=> [id], "inserted" => 1}} = run(q)
     
@@ -66,10 +69,13 @@ defmodule WritingDataTest do
     q = insert(table_query, [%{id: id, value: 3}], %{conflict: fn(_id, old, new) ->
       merge(old, %{value: add(get_field(old, "value"), get_field(new, "value"))}) end})
 <<<<<<< HEAD
+<<<<<<< HEAD
     {:ok, %Record{data: %{"replaced" => 1}}} = run(q)
     {:ok, %Collection{data: [%{"id" => ^id, "name" => "World", "value" => 6}]}} = run(table_query)
   end
 =======
+=======
+>>>>>>> parent of 29e485b... Switch to :ok/:error tuple response
     %Record{data: %{"replaced" => 1}} = run(q)
     %Collection{data: [%{"id" => ^id, "name" => "World", "value" => 6}]} = run(table_query)
   end  

@@ -39,6 +39,7 @@ defmodule ControlStructuresTest do
   test "branch" do
     q = branch(true, 1, 2)
 <<<<<<< HEAD
+<<<<<<< HEAD
     {:ok, %Record{data: data}} = run q
     assert data == 1
     q = branch(false, 1, 2)
@@ -48,6 +49,11 @@ defmodule ControlStructuresTest do
     %Record{data: data} = run q
     assert data == 1 
     q = branch(false, 1, 2)
+=======
+    %Record{data: data} = run q
+    assert data == 1 
+    q = branch(false, 1, 2)
+>>>>>>> parent of 29e485b... Switch to :ok/:error tuple response
     %Record{data: data} = run q
     assert data == 2 
 >>>>>>> parent of 29e485b... Switch to :ok/:error tuple response
@@ -114,8 +120,13 @@ defmodule ControlStructuresTest do
 
   test "uuid" do
 <<<<<<< HEAD
+<<<<<<< HEAD
     q = uuid()
     {:ok, %Record{data: data}} = run q
+=======
+    q = uuid  
+    %Record{data: data} = run q
+>>>>>>> parent of 29e485b... Switch to :ok/:error tuple response
 =======
     q = uuid  
     %Record{data: data} = run q

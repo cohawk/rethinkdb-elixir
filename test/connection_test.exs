@@ -33,7 +33,11 @@ defmodule ConnectionTest do
     conn = FlakyConnection.start('localhost', 28015, [local_port: 28014])
     :timer.sleep(1000)
 <<<<<<< HEAD
+<<<<<<< HEAD
     {:ok, %RethinkDB.Record{}} = RethinkDB.Query.table_list() |> run
+=======
+    %RethinkDB.Record{} = RethinkDB.Query.table_list |> run
+>>>>>>> parent of 29e485b... Switch to :ok/:error tuple response
 =======
     %RethinkDB.Record{} = RethinkDB.Query.table_list |> run
 >>>>>>> parent of 29e485b... Switch to :ok/:error tuple response
@@ -89,7 +93,11 @@ defmodule ConnectionTest do
     db_create("new_test") |> RethinkDB.run(c)
     db("new_test") |> table_create("new_test_table") |> RethinkDB.run(c)
 <<<<<<< HEAD
+<<<<<<< HEAD
     {:ok, %{data: data}} = table_list() |> RethinkDB.run(c)
+=======
+    %{data: data} = table_list |> RethinkDB.run(c)
+>>>>>>> parent of 29e485b... Switch to :ok/:error tuple response
 =======
     %{data: data} = table_list |> RethinkDB.run(c)
 >>>>>>> parent of 29e485b... Switch to :ok/:error tuple response
@@ -122,6 +130,9 @@ defmodule ConnectionTest do
 =======
     {:ok, c} = RethinkDB.Connection.start_link(port: conn.port, ssl: [ca_certs: ["./test/cert/rootCA.crt"]], sync_connect: true)
     %{data: _} = table_list |> RethinkDB.run(c)
+<<<<<<< HEAD
+>>>>>>> parent of 29e485b... Switch to :ok/:error tuple response
+=======
 >>>>>>> parent of 29e485b... Switch to :ok/:error tuple response
   end
 end
@@ -141,7 +152,11 @@ defmodule ConnectionRunTest do
     table_create("db_option_test_table") |> run(db: "db_option_test")
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     {:ok, %{data: data}} = db("db_option_test") |> table_list() |> run
+=======
+    %{data: data} = db("db_option_test") |> table_list |> run
+>>>>>>> parent of 29e485b... Switch to :ok/:error tuple response
 =======
     %{data: data} = db("db_option_test") |> table_list |> run
 >>>>>>> parent of 29e485b... Switch to :ok/:error tuple response

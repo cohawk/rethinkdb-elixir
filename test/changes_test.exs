@@ -44,7 +44,11 @@ defmodule ChangesTest do
     res = run(q)
     expected = res.data["id"]
 <<<<<<< HEAD
+<<<<<<< HEAD
     {:ok, changes} = Task.await(t)
+=======
+    changes = Task.await(t) 
+>>>>>>> parent of 29e485b... Switch to :ok/:error tuple response
 =======
     changes = Task.await(t) 
 >>>>>>> parent of 29e485b... Switch to :ok/:error tuple response

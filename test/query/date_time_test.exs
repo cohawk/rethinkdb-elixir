@@ -13,7 +13,11 @@ defmodule DateTimeTest do
 
   test "now" do
 <<<<<<< HEAD
+<<<<<<< HEAD
     {:ok, %Record{data: data}} = now() |> run
+=======
+    %Record{data: data} = now |> run
+>>>>>>> parent of 29e485b... Switch to :ok/:error tuple response
 =======
     %Record{data: data} = now |> run
 >>>>>>> parent of 29e485b... Switch to :ok/:error tuple response

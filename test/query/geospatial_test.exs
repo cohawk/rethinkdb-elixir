@@ -15,6 +15,7 @@ defmodule GeospatialTest do
 
   test "circle" do
 <<<<<<< HEAD
+<<<<<<< HEAD
     {:ok, %Record{data: data}} = circle({1,1}, 5) |> run
     assert %Polygon{coordinates: [_h | []]} = data
   end
@@ -24,6 +25,14 @@ defmodule GeospatialTest do
     assert %Polygon{coordinates: [_h |[]]} = data
 =======
     %Record{data: data} = circle({1,1}, 5) |> run
+=======
+    %Record{data: data} = circle({1,1}, 5) |> run
+    assert %Polygon{outer_coordinates: [_h | _t], inner_coordinates: []} = data
+  end
+
+  test "circle with opts" do
+    %Record{data: data} = circle({1,1}, 5, num_vertices: 100, fill: true) |> run
+>>>>>>> parent of 29e485b... Switch to :ok/:error tuple response
     assert %Polygon{outer_coordinates: [_h | _t], inner_coordinates: []} = data
   end
 
@@ -39,9 +48,12 @@ defmodule GeospatialTest do
 
   test "fill" do
 <<<<<<< HEAD
+<<<<<<< HEAD
     {:ok, %Record{data: data}} = fill(line([{1,1}, {4,5}, {2,2}, {1,1}])) |> run
     assert data == %Polygon{coordinates: [[{1,1}, {4,5}, {2,2}, {1,1}]]}
 =======
+=======
+>>>>>>> parent of 29e485b... Switch to :ok/:error tuple response
     %Record{data: data} = fill(line([{1,1}, {4,5}, {2,2}, {1,1}])) |> run
     assert data == %Polygon{outer_coordinates: [{1,1}, {4,5}, {2,2}, {1,1}]}
 >>>>>>> parent of 29e485b... Switch to :ok/:error tuple response
@@ -106,9 +118,12 @@ defmodule GeospatialTest do
 
   test "polygon" do
 <<<<<<< HEAD
+<<<<<<< HEAD
     {:ok, %Record{data: data}} = polygon([{0,0}, {0,1}, {1,1}, {1,0}]) |> run
     assert data.coordinates == [[{0,0}, {0,1}, {1,1}, {1,0}, {0,0}]]
 =======
+=======
+>>>>>>> parent of 29e485b... Switch to :ok/:error tuple response
     %Record{data: data} = polygon([{0,0}, {0,1}, {1,1}, {1,0}]) |> run
     assert data.outer_coordinates == [{0,0}, {0,1}, {1,1}, {1,0}, {0,0}]
 >>>>>>> parent of 29e485b... Switch to :ok/:error tuple response
@@ -118,9 +133,12 @@ defmodule GeospatialTest do
     p1 = polygon([{0,0}, {0,1}, {1,1}, {1,0}])
     p2 = polygon([{0.25,0.25}, {0.25,0.5}, {0.5,0.5}, {0.5,0.25}])
 <<<<<<< HEAD
+<<<<<<< HEAD
     {:ok, %Record{data: data}} = p1 |> polygon_sub(p2) |> run
     assert data.coordinates == [[{0,0}, {0,1}, {1,1}, {1,0}, {0,0}], [{0.25,0.25}, {0.25,0.5}, {0.5,0.5}, {0.5,0.25}, {0.25,0.25}]]
 =======
+=======
+>>>>>>> parent of 29e485b... Switch to :ok/:error tuple response
     %Record{data: data} = p1 |> polygon_sub(p2) |> run
     assert data.outer_coordinates == [{0,0}, {0,1}, {1,1}, {1,0}, {0,0}]
     assert data.inner_coordinates == [{0.25,0.25}, {0.25,0.5}, {0.5,0.5}, {0.5,0.25}, {0.25,0.25}]

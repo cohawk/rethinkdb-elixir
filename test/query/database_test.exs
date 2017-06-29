@@ -30,8 +30,13 @@ defmodule DatabaseTest do
     %Record{data: %{"dbs_created" => 1}} = run(q)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     q = db_list()
     {:ok, %Record{data: dbs}} = run(q)
+=======
+    q = db_list
+    %Record{data: dbs} = run(q)
+>>>>>>> parent of 29e485b... Switch to :ok/:error tuple response
 =======
     q = db_list
     %Record{data: dbs} = run(q)
@@ -42,8 +47,13 @@ defmodule DatabaseTest do
     %Record{data: %{"dbs_dropped" => 1}} = run(q)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     q = db_list()
     {:ok, %Record{data: dbs}} = run(q)
+=======
+    q = db_list
+    %Record{data: dbs} = run(q)
+>>>>>>> parent of 29e485b... Switch to :ok/:error tuple response
 =======
     q = db_list
     %Record{data: dbs} = run(q)

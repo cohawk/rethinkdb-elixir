@@ -64,7 +64,11 @@ defmodule SelectionTest do
     %RethinkDB.Collection{data: data} = table(@table_name) |> between("b", "d") |> run
     assert Enum.count(data) == 2
 <<<<<<< HEAD
+<<<<<<< HEAD
     {:ok, %RethinkDB.Collection{data: data}} = table(@table_name) |> between(minval(), maxval()) |> run
+=======
+    %RethinkDB.Collection{data: data} = table(@table_name) |> between(minval, maxval) |> run
+>>>>>>> parent of 29e485b... Switch to :ok/:error tuple response
 =======
     %RethinkDB.Collection{data: data} = table(@table_name) |> between(minval, maxval) |> run
 >>>>>>> parent of 29e485b... Switch to :ok/:error tuple response
