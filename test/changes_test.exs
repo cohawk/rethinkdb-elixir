@@ -22,7 +22,7 @@ defmodule ChangesTest do
 
   test "first change" do
     q = table(@table_name) |> changes
-    {:ok, changes = %Feed{}} = run(q)
+    changes = %Feed{} = run(q)
 
     t = Task.async fn ->
       changes |> Enum.take(1)
@@ -35,15 +35,19 @@ defmodule ChangesTest do
 
   test "changes" do
     q = table(@table_name) |> changes
-    {:ok, changes} = {:ok, %Feed{}} = run(q)
+    changes = %Feed{} = run(q)
     t = Task.async fn ->
       RethinkDB.Connection.next(changes)
     end
     data = %{"test" => "data"}
     q = table(@table_name) |> insert(data)
-    {:ok, res} = run(q)
+    res = run(q)
     expected = res.data["id"]
+<<<<<<< HEAD
     {:ok, changes} = Task.await(t)
+=======
+    changes = Task.await(t) 
+>>>>>>> parent of 29e485b... Switch to :ok/:error tuple response
     ^expected = changes.data |> hd |> Map.get("id")
 
     # test Enumerable

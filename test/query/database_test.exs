@@ -27,17 +27,27 @@ defmodule DatabaseTest do
 
   test "databases" do
     q = db_create(@db_name)
-    {:ok, %Record{data: %{"dbs_created" => 1}}} = run(q)
+    %Record{data: %{"dbs_created" => 1}} = run(q)
 
+<<<<<<< HEAD
     q = db_list()
     {:ok, %Record{data: dbs}} = run(q)
+=======
+    q = db_list
+    %Record{data: dbs} = run(q)
+>>>>>>> parent of 29e485b... Switch to :ok/:error tuple response
     assert Enum.member?(dbs, @db_name)
 
     q = db_drop(@db_name)
-    {:ok, %Record{data: %{"dbs_dropped" => 1}}} = run(q)
+    %Record{data: %{"dbs_dropped" => 1}} = run(q)
 
+<<<<<<< HEAD
     q = db_list()
     {:ok, %Record{data: dbs}} = run(q)
+=======
+    q = db_list
+    %Record{data: dbs} = run(q)
+>>>>>>> parent of 29e485b... Switch to :ok/:error tuple response
     assert !Enum.member?(dbs, @db_name)
   end
 end
